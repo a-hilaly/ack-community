@@ -42,7 +42,7 @@ publish-controller-image:  ## docker push a container image for SERVICE
 	@echo $(DOCKER_PASSWORD) | docker login -u $(DOCKER_USERNAME) --password-stdin
 	./scripts/publish-controller-image.sh -r $(DOCKER_REPOSITORY) -s $(SERVICE)
 
-build-controller: build-ack-generate	## Generate controller code for SERVICE
+build-controller: build-ack-generate ## Generate controller code for SERVICE
 	./scripts/build-controller.sh $(SERVICE)
 
 kind-test: test	## Run functional tests for SERVICE with AWS_ROLE_ARN
