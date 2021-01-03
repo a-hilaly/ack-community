@@ -1,0 +1,11 @@
+resources:
+  Bucket:
+    compare:
+      Name:
+        strict: true
+      ACK:
+        strict: false # default
+      CreateBucketConfiguration:
+        strict: true
+        inherit: true
+
