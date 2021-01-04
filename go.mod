@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/aws/aws-lambda-go v1.20.0 // indirect
 	github.com/aws/aws-sdk-go v1.34.32
+	github.com/cheekybits/genny v1.0.0
 	github.com/crossplane/crossplane-runtime v0.9.0
 	github.com/dlclark/regexp2 v1.2.0
 	// pin to v0.1.1 due to release problem with v0.1.2

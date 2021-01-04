@@ -1,4 +1,4 @@
-package gencopy
+package compare
 
 import (
 	"testing"
@@ -6,9 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func stringPtr(s string) *string {
-	return &s
-}
+func stringPtr(v string) *string { return &v }
+
+//TODO(a-hilaly) add unit tests for bool, int, float
+/*
+func boolPtr(v bool) *bool          { return &v }
+func int32Ptr(v int32) *int32       { return &v }
+func int64Ptr(v int64) *int64       { return &v }
+func float32Ptr(v float32) *float32 { return &v }
+func float64Ptr(v float64) *float64 { return &v }
+*/
 
 func TestEqualStringStrict(t *testing.T) {
 	testCases := []struct {
@@ -63,8 +70,8 @@ func TestEqualStringStrict(t *testing.T) {
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			d := Comparator{}
-			equal := d.stringEqualStrict(tC.fieldPath, tC.v1, tC.v2)
+			d := &comparator{}
+			equal := d.StringEqualStrict(tC.fieldPath, tC.v1, tC.v2)
 			assert.Equal(t, tC.expect, equal)
 			if !equal {
 				assert.Equal(t, []string{tC.fieldPath}, d.diffs)
@@ -126,8 +133,8 @@ func TestEqualStringSoft(t *testing.T) {
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			d := Comparator{}
-			equal := d.stringEqualSoft(tC.fieldPath, tC.v1, tC.v2)
+			d := &comparator{}
+			equal := d.StringEqualSoft(tC.fieldPath, tC.v1, tC.v2)
 			assert.Equal(t, tC.expect, equal)
 			if !equal {
 				assert.Equal(t, []string{tC.fieldPath}, d.diffs)

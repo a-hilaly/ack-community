@@ -1,0 +1,16 @@
+resources:
+  Table:
+    compare:
+      mode: soft
+      inherit: true
+      fields:
+        Name:
+          mode: strict
+        KeySchema:
+          mode: strict
+        SEESpecification:
+          mode: strict
+          inherit: false
+types:
+  KeySchema:
+    compare:
