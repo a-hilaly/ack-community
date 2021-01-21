@@ -11,26 +11,21 @@
 // express or implied. See the License for the specific language governing
 // permissions and limitations under the License.
 
-package util
+package compare
 
-// InStrings returns true if the subject string is contained in the supplied
-// slice of strings
-func InStrings(subject string, collection []string) bool {
-	for _, item := range collection {
-		if subject == item {
-			return true
+import (
+	"github.com/aws/aws-controllers-k8s/pkg/util"
+)
+
+// SliceStringStringPEqual returns true if the supplied maps are equal
+func SliceStringStringPEqual(a, b []*string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for _, aVal := range a {
+		if !util.InStringPs(*aVal, b) {
+			return false
 		}
 	}
-	return false
-}
-
-// InStringPs returns true if the subject string is contained in the supplied
-// slice of string pointers
-func InStringPs(subject string, collection []*string) bool {
-	for _, item := range collection {
-		if subject == *item {
-			return true
-		}
-	}
-	return false
+	return true
 }
