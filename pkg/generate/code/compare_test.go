@@ -36,8 +36,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.ACL, b.ko.Spec.ACL) {
 		delta.Add("Spec.ACL", a.ko.Spec.ACL, b.ko.Spec.ACL)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.ACL != *b.ko.Spec.ACL {
 			delta.Add("Spec.ACL", a.ko.Spec.ACL, b.ko.Spec.ACL)
 		}
@@ -45,13 +44,11 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.CreateBucketConfiguration, b.ko.Spec.CreateBucketConfiguration) {
 		delta.Add("Spec.CreateBucketConfiguration", a.ko.Spec.CreateBucketConfiguration, b.ko.Spec.CreateBucketConfiguration)
-	}
-	else {
+	} else {
 
 		if ackcompare.HasNilDifference(a.ko.Spec.CreateBucketConfiguration.LocationConstraint, b.ko.Spec.CreateBucketConfiguration.LocationConstraint) {
 			delta.Add("Spec.CreateBucketConfiguration.LocationConstraint", a.ko.Spec.CreateBucketConfiguration.LocationConstraint, b.ko.Spec.CreateBucketConfiguration.LocationConstraint)
-		}
-		else {
+		} else {
 			if *a.ko.Spec.CreateBucketConfiguration.LocationConstraint != *b.ko.Spec.CreateBucketConfiguration.LocationConstraint {
 				delta.Add("Spec.CreateBucketConfiguration.LocationConstraint", a.ko.Spec.CreateBucketConfiguration.LocationConstraint, b.ko.Spec.CreateBucketConfiguration.LocationConstraint)
 			}
@@ -60,8 +57,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.GrantFullControl, b.ko.Spec.GrantFullControl) {
 		delta.Add("Spec.GrantFullControl", a.ko.Spec.GrantFullControl, b.ko.Spec.GrantFullControl)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.GrantFullControl != *b.ko.Spec.GrantFullControl {
 			delta.Add("Spec.GrantFullControl", a.ko.Spec.GrantFullControl, b.ko.Spec.GrantFullControl)
 		}
@@ -69,8 +65,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.GrantRead, b.ko.Spec.GrantRead) {
 		delta.Add("Spec.GrantRead", a.ko.Spec.GrantRead, b.ko.Spec.GrantRead)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.GrantRead != *b.ko.Spec.GrantRead {
 			delta.Add("Spec.GrantRead", a.ko.Spec.GrantRead, b.ko.Spec.GrantRead)
 		}
@@ -78,8 +73,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.GrantReadACP, b.ko.Spec.GrantReadACP) {
 		delta.Add("Spec.GrantReadACP", a.ko.Spec.GrantReadACP, b.ko.Spec.GrantReadACP)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.GrantReadACP != *b.ko.Spec.GrantReadACP {
 			delta.Add("Spec.GrantReadACP", a.ko.Spec.GrantReadACP, b.ko.Spec.GrantReadACP)
 		}
@@ -87,8 +81,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.GrantWrite, b.ko.Spec.GrantWrite) {
 		delta.Add("Spec.GrantWrite", a.ko.Spec.GrantWrite, b.ko.Spec.GrantWrite)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.GrantWrite != *b.ko.Spec.GrantWrite {
 			delta.Add("Spec.GrantWrite", a.ko.Spec.GrantWrite, b.ko.Spec.GrantWrite)
 		}
@@ -96,8 +89,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.GrantWriteACP, b.ko.Spec.GrantWriteACP) {
 		delta.Add("Spec.GrantWriteACP", a.ko.Spec.GrantWriteACP, b.ko.Spec.GrantWriteACP)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.GrantWriteACP != *b.ko.Spec.GrantWriteACP {
 			delta.Add("Spec.GrantWriteACP", a.ko.Spec.GrantWriteACP, b.ko.Spec.GrantWriteACP)
 		}
@@ -105,8 +97,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.Name, b.ko.Spec.Name) {
 		delta.Add("Spec.Name", a.ko.Spec.Name, b.ko.Spec.Name)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.Name != *b.ko.Spec.Name {
 			delta.Add("Spec.Name", a.ko.Spec.Name, b.ko.Spec.Name)
 		}
@@ -114,8 +105,7 @@ func TestCompareResource_S3_Bucket(t *testing.T) {
 
 	if ackcompare.HasNilDifference(a.ko.Spec.ObjectLockEnabledForBucket, b.ko.Spec.ObjectLockEnabledForBucket) {
 		delta.Add("Spec.ObjectLockEnabledForBucket", a.ko.Spec.ObjectLockEnabledForBucket, b.ko.Spec.ObjectLockEnabledForBucket)
-	}
-	else {
+	} else {
 		if *a.ko.Spec.ObjectLockEnabledForBucket != *b.ko.Spec.ObjectLockEnabledForBucket {
 			delta.Add("Spec.ObjectLockEnabledForBucket", a.ko.Spec.ObjectLockEnabledForBucket, b.ko.Spec.ObjectLockEnabledForBucket)
 		}

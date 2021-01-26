@@ -107,12 +107,12 @@ func CompareResource(
 
 		if nilCode != "" {
 			// else {
-			out += nilCode
-			out += fmt.Sprintf(
-				"%selse {\n", indent,
-			)
+			out += nilCode + " else {\n"
 			indentLevel++
+		} else {
+			out += "\n"
 		}
+
 		switch memberShape.Type {
 		case "structure":
 			// Recurse through all the struct's fields and subfields, building
@@ -232,7 +232,7 @@ func compareNil(
 	)
 	// }
 	out += fmt.Sprintf(
-		"%s}\n", indent,
+		"%s}", indent,
 	)
 
 	return out
@@ -518,11 +518,10 @@ func compareStruct(
 
 		if nilCode != "" {
 			// else {
-			out += nilCode
-			out += fmt.Sprintf(
-				"%selse {\n", indent,
-			)
+			out += nilCode + " else {\n"
 			indentLevel++
+		} else {
+			out += "\n"
 		}
 		switch memberShape.Type {
 		case "structure":
