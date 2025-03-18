@@ -10,8 +10,10 @@ weight: 66
 toc: true
 ---
 
-**WARNING** This is no longer the recommended approach for adopting resources.
-The recommended feature can be found [HERE](features#resourceadoption)
+{{% hint type="warning" title="Warning" %}}
+This is no longer the recommended approach for adopting resources in ACK. The
+recommended feature can be found [HERE](../features.md#resourceadoption)
+{{% /hint %}}
 
 The ACK controllers are intended to manage the complete lifecycle of an AWS
 resource, from creation through deletion. However, you may already be
@@ -46,7 +48,7 @@ the Kubernetes target.
 
 The AWS resource reference requires the unique identifier for the object, either
 as an ARN or as the name or ID of the object. Which of these is required depends
-on the service and the particular resource. 
+on the service and the particular resource.
 You can find which field is required
 by finding the unique identifier field used by the `Describe*`, `List*`, or `Get*` API
 calls for that resource.
@@ -63,7 +65,7 @@ bucket, you would specify a `group` of `s3.services.k8s.aws` and a `kind` of
 `Bucket`. The Kubernetes target also allows you to override the `metadata` for
 the object that is created. By default, all resources created through an
 `AdoptedResource` will have the same `metadata.name` as the `AdoptedResource`
-that created it. 
+that created it.
 
 [api-ref]: https://aws-controllers-k8s.github.io/community/reference/common/v1alpha1/adoptedresource/
 
@@ -77,7 +79,7 @@ apiVersion: services.k8s.aws/v1alpha1
 kind: AdoptedResource
 metadata:
   name: adopt-my-existing-bucket
-spec:  
+spec:
   aws:
     nameOrID: example-bucket
   kubernetes:
@@ -96,7 +98,7 @@ Some AWS resources cannot be defined using only a single unique identifier. For
 APIs where we need to provide multiple identifiers, the `AdoptedResource` spec
 contains a field called `aws.additionalKeys` which allows for any number of
 arbitrary key-value pairs required to define the multiple identifier keys. When
-adopting a resource with multiple identifiers, provide the *most specific*
+adopting a resource with multiple identifiers, provide the _most specific_
 identifier in the `nameOrID` field. Then for each additional identifier, set the
 name of the key in `additionalKeys` to be the name in the ACK spec or status for
 that field, and the value to be the actual identifier value.
@@ -115,7 +117,7 @@ apiVersion: services.k8s.aws/v1alpha1
 kind: AdoptedResource
 metadata:
   name: adopt-my-existing-integration
-spec:  
+spec:
   aws:
     nameOrID: integration-id-123456789012
     additionalKeys:
